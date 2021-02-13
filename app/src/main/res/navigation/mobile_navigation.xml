@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/store">
+
+
+    <fragment
+        android:id="@+id/store"
+        android:name="kamal.store.com.main.ui.Store_fragment"
+        android:label="Kamal Store"
+        tools:layout="@layout/fragment_store">
+
+        <action android:id="@+id/store_to_product_detail"
+            app:destination="@+id/product_detail"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/cart"
+        android:name="kamal.store.com.main.ui.Cart_fragment"
+        android:label="Your Cart"
+        tools:layout="@layout/fragment_cart" >
+
+        <action android:id="@+id/cart_to_place_order"
+            app:destination="@+id/place_order"/>
+
+        <action android:id="@+id/cart_to_store"
+            app:destination="@+id/store"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/order"
+        android:name="kamal.store.com.main.ui.Order_fragment"
+        android:label="Your Posted Orders"
+        tools:layout="@layout/fragment_orders" >
+
+        <action android:id="@+id/order_to_store"
+            app:destination="@+id/store"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/account"
+        android:name="kamal.store.com.main.ui.Account_fragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_account" />
+
+    <fragment
+        android:id="@+id/product_detail"
+        android:name="kamal.store.com.detail_ui.Product_detail_fragment"
+        android:label="Item"
+        tools:layout="@layout/fragment_product_detail" />
+
+    <fragment
+        android:id="@+id/place_order"
+        android:name="kamal.store.com.detail_ui.Checkout_fragment"
+        android:label="Item"
+        tools:layout="@layout/fragment_checkout" />
+
+</navigation>
